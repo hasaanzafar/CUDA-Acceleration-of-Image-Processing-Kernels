@@ -7,7 +7,6 @@ with emphasis on GPU concurrency, memory hierarchy utilization, and kernel confi
 The study is motivated by concepts from *Concurrent Programming with GPUs (Coursera)* and
 focuses on understanding performance trade-offs rather than outperforming optimized libraries.
 
----
 
 ## 2. Experimental Setup
 
@@ -26,7 +25,6 @@ focuses on understanding performance trade-offs rather than outperforming optimi
 - PyTorch CPU implementation
 - PyTorch CUDA implementation
 
----
 
 ## 3. Kernels Evaluated
 
@@ -37,7 +35,6 @@ focuses on understanding performance trade-offs rather than outperforming optimi
 
 This kernel maximizes parallelism but suffers from redundant global memory loads.
 
----
 
 ### 3.2 Shared Memory Optimized Convolution
 - Tiled convolution using shared memory
@@ -46,7 +43,6 @@ This kernel maximizes parallelism but suffers from redundant global memory loads
 
 This approach reduces global memory traffic at the cost of increased shared memory usage.
 
----
 
 ## 4. Block Size Sensitivity Study
 
@@ -62,7 +58,6 @@ Kernels were evaluated using the following block sizes:
 
 Block configuration had a measurable impact on throughput and latency.
 
----
 
 ## 5. Profiling Results
 
@@ -76,7 +71,6 @@ Block configuration had a measurable impact on throughput and latency.
 - Synchronization overhead is amortized over reduced memory traffic
 - Occupancy is bounded by shared memory usage per block
 
----
 
 ## 6. Comparison with PyTorch
 
@@ -87,7 +81,6 @@ PyTorch CUDA implementations outperform custom kernels due to:
 
 However, custom kernels demonstrate predictable performance trends and validate theoretical expectations.
 
----
 
 ## 7. Key Takeaways
 
@@ -96,7 +89,6 @@ However, custom kernels demonstrate predictable performance trends and validate 
 - Kernel launch configuration strongly influences occupancy and throughput
 - Highly optimized libraries serve as valuable performance references
 
----
 
 ## 8. Conclusion
 
