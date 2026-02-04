@@ -1,6 +1,6 @@
-CUDA Acceleration of Image Processing Kernels
-Overview
+# CUDA Acceleration of Image Processing Kernels
 
+## Overview
 This project explores GPU concurrency and memory optimization by implementing custom CUDA kernels for image processing operations, focusing on 2D convolution. The goal is to study how parallelism, memory hierarchy, and kernel configuration impact performance.
 
 The work is inspired by concepts from Concurrent Programming with GPUs (Coursera) and emphasizes performance analysis rather than raw accuracy.
