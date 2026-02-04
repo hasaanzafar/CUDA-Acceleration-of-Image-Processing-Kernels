@@ -50,4 +50,4 @@ Results demonstrate the impact of thread-block configuration on execution effici
 2. Python (benchmarking & visualization)
 3. PyTorch (baseline comparison)
 
-CMake
+
