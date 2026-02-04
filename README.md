@@ -5,7 +5,7 @@ This project explores GPU concurrency and memory optimization by implementing cu
 
 The work is inspired by concepts from Concurrent Programming with GPUs (Coursera) and emphasizes performance analysis rather than raw accuracy.
 
-## Implemented Kernels
+Implemented Kernels
 1. Naive CUDA Convolution
 2. One thread per output pixel
 3. Direct global memory access
@@ -15,56 +15,39 @@ Shared Memory Optimized Convolution
 2. Reduced global memory accesses
 3. Explicit thread synchronization (__syncthreads())
 
-Benchmarking & Evaluation
+## Benchmarking & Evaluation
 
 CUDA kernels were benchmarked against:
-
-CPU convolution (single-threaded)
-
-PyTorch CPU implementation
-
-PyTorch CUDA implementation (reference baseline)
+1. CPU convolution (single-threaded)
+2. PyTorch CPU implementation
+3. PyTorch CUDA implementation (reference baseline)
 
 Metrics analyzed:
+1. Execution latency
+2. Throughput
+3. Memory-access behavior
+4. Block-size sensitivity
 
-Execution latency
-
-Throughput
-
-Memory-access behavior
-
-Block-size sensitivity
-
-Block Size Sensitivity Study
+## Block Size Sensitivity Study
 
 To analyze concurrency and occupancy, convolution kernels were evaluated using different block sizes:
-
-8×8
-
-16×16
-
-32×32
+1. 8×8
+2. 16×16
+3. 32×32
 
 Results demonstrate the impact of thread-block configuration on execution efficiency.
 
 (See results/block_size_comparison.png)
 
-Key Learnings
+## Key Learnings
+1. Memory access patterns significantly affect performance.
+2. Shared memory tiling reduces global memory latency.
+3. Kernel configuration (block size) influences occupancy and throughput.
+4. Highly optimized libraries (e.g., PyTorch) outperform custom kernels but provide useful reference points.
 
-Memory access patterns significantly affect performance.
-
-Shared memory tiling reduces global memory latency.
-
-Kernel configuration (block size) influences occupancy and throughput.
-
-Highly optimized libraries (e.g., PyTorch) outperform custom kernels but provide useful reference points.
-
-Technologies Used
-
-CUDA C++
-
-Python (benchmarking & visualization)
-
-PyTorch (baseline comparison)
+## Technologies Used
+1. CUDA C++
+2. Python (benchmarking & visualization)
+3. PyTorch (baseline comparison)
 
 CMake
