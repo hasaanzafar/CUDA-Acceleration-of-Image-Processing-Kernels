@@ -5,21 +5,15 @@ This project explores GPU concurrency and memory optimization by implementing cu
 
 The work is inspired by concepts from Concurrent Programming with GPUs (Coursera) and emphasizes performance analysis rather than raw accuracy.
 
-Implemented Kernels
-
-Naive CUDA Convolution
-
-One thread per output pixel
-
-Direct global memory access
+## Implemented Kernels
+1. Naive CUDA Convolution
+2. One thread per output pixel
+3. Direct global memory access
 
 Shared Memory Optimized Convolution
-
-Tiled convolution using shared memory
-
-Reduced global memory accesses
-
-Explicit thread synchronization (__syncthreads())
+1. Tiled convolution using shared memory
+2. Reduced global memory accesses
+3. Explicit thread synchronization (__syncthreads())
 
 Benchmarking & Evaluation
 
